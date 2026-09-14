@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DashboardController {
 
+    // =====================================================
+    // DASHBOARD
+    // =====================================================
+
     @GetMapping("/dashboard")
     public String dashboard(
             HttpSession session,
@@ -19,12 +23,19 @@ public class DashboardController {
         User user =
                 (User) session.getAttribute("loggedInUser");
 
-        // Not logged in
+        // =================================================
+        // CHECK LOGIN
+        // =================================================
+
         if (user == null) {
             return "redirect:/login";
         }
 
-        model.addAttribute("user", user);
+        // Send user to JSP
+        model.addAttribute(
+                "user",
+                user
+        );
 
         return "dashboard";
     }
