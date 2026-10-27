@@ -71,7 +71,7 @@ public class UserController {
     // LOGIN USER
     // =====================================================
 
-    @PostMapping("/login")
+    @PostMapping("/")
     public String loginUser(
             @RequestParam String email,
             @RequestParam String password,
