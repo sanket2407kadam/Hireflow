@@ -61,7 +61,7 @@ public class UserController {
     // LOGIN PAGE
     // =====================================================
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String showLoginPage() {
 
         return "login";
